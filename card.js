@@ -6,31 +6,27 @@ function addItems(id) {
     var total = parseNumber + 1;
     document.getElementById(id).value = total;
 }
-
 var addPhones = document.getElementById("add-phone");
 addPhones.addEventListener("click", function () {
     addItems("numberOfPhone");
 })
-
 var addPhones = document.getElementById("add-case");
 addPhones.addEventListener("click", function () {
     addItems("numberOfCase");
 })
 
-
 // Select Items (remove)
+
 function removeItems(id) {
     var number = document.getElementById(id).value;
     var parseNumber = parseFloat(number);
     var total = parseNumber - 1;
     document.getElementById(id).value = total;
 }
-
 var addPhones = document.getElementById("remove-case");
 addPhones.addEventListener("click", function () {
     removeItems("numberOfCase");
 })
-
 var addPhones = document.getElementById("remove-phone");
 addPhones.addEventListener("click", function () {
     removeItems("numberOfPhone");
@@ -38,36 +34,47 @@ addPhones.addEventListener("click", function () {
 
 // Adding Item Price
 
-var addPhone = document.getElementById("add-phone");
+function parseSection(id) {
+    var parseItem = document.getElementById(id).innerText;
+    var afterParse = parseFloat(parseItem);
+    return afterParse;
+}
+function addingAmount(id,number) {
+    var parseItem = parseSection(id);
+    var totalPrice = document.getElementById(id).innerText = parseItem + number;
+}
+var addPhone =  document.getElementById("add-phone");
 addPhone.addEventListener("click", function () {
-    var Price = document.getElementById("p-price").innerText;
-    var parseNumber = parseFloat(Price);
-    var total = parseNumber + 1219;
-    document.getElementById("p-price").innerText = total;
+    addingAmount("p-price",1219);
+    addingAmount("sub-total",1219);
+    addingAmount("tax",1);
+    addingAmount("total",1220);
 })
-
-var addPhone = document.getElementById("add-case");
-addPhone.addEventListener("click", function (){
-    var Price = document.getElementById("c-price").innerText;
-    var parseNumber = parseFloat(Price);
-    var total = parseNumber + 59;
-    document.getElementById("c-price").innerText = total;
-})
-
-// substract item Price
-
-var addPhone = document.getElementById("remove-phone");
+var addPhone =  document.getElementById("add-case");
 addPhone.addEventListener("click", function () {
-    var Price = document.getElementById("p-price").innerText;
-    var parseNumber = parseFloat(Price);
-    var total = parseNumber - 1219;
-    document.getElementById("p-price").innerText = total;
+    addingAmount("c-price",59);
+    addingAmount("sub-total",59);
+    addingAmount("tax",1);
+    addingAmount("total",60);
 })
 
-var addPhone = document.getElementById("remove-case");
-addPhone.addEventListener("click", function (){
-    var Price = document.getElementById("c-price").innerText;
-    var parseNumber = parseFloat(Price);
-    var total = parseNumber - 59;
-    document.getElementById("c-price").innerText = total;
+// Substract Item Price
+
+function substractAmount(id,number) {
+    var parseItem = parseSection(id);
+    var totalPrice = document.getElementById(id).innerText = parseItem - number;
+}
+var addPhone =  document.getElementById("remove-phone");
+addPhone.addEventListener("click", function () {
+    substractAmount("p-price",1219);
+    substractAmount("sub-total",1219);
+    substractAmount("tax",1);
+    substractAmount("total",1220);
+})
+var addPhone =  document.getElementById("remove-case");
+addPhone.addEventListener("click", function () {
+    substractAmount("c-price",59);
+    substractAmount("sub-total",59);
+    substractAmount("tax",1);
+    substractAmount("total",60);
 })

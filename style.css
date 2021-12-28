@@ -53,3 +53,33 @@ body{
 	background-color: #2FBE70;
 	border: none;
 }
+.text{
+	text-align: center;
+	margin-top: 50px;
+}
+.yesbtn{
+	margin: 200px;
+	margin-right: 650px;
+	padding: 20px;
+}
+.nobtn{
+	padding: 20px;
+}
+.image{
+	margin: 15%;
+	margin-left: 400px;
+}
+.congrats{
+	height: 400px;
+	margin: 5%;
+	margin-left: 400px;
+}
+.section2{
+	display: none;
+}
+.section3{
+	display: none;
+}
+.section4{
+	display: none;
+}

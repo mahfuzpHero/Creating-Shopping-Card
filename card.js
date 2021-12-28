@@ -78,3 +78,15 @@ addPhone.addEventListener("click", function () {
     substractAmount("tax",1);
     substractAmount("total",60);
 })
+document.getElementById("checkbtn").addEventListener("click", function () {
+    const section1 = document.getElementById("sec1").style.display = "none";
+    const section2 = document.getElementById("sec2").style.display = "block";
+})
+document.getElementById("positive").addEventListener("click", function () {
+    const section2 = document.getElementById("sec2").style.display = "none";
+    const section4 = document.getElementById("sec4").style.display = "block";
+})
+document.getElementById("negative").addEventListener("click", function () {
+    const section2 = document.getElementById("sec2").style.display = "none";
+    const section4 = document.getElementById("sec3").style.display = "block";
+})

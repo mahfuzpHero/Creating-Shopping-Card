@@ -16,7 +16,6 @@ addPhones.addEventListener("click", function () {
 })
 
 // Select Items (remove)
-
 function removeItems(id) {
     var number = document.getElementById(id).value;
     var parseNumber = parseFloat(number);
